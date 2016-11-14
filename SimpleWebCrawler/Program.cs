@@ -14,6 +14,7 @@ namespace SimpleWebCrawler
         //TODO: Instrumentation and logging - Application Insights
         //TODO: Review Handling for 301 & 302 redirects - not relevant to http://www.tyre-shopper.co.uk
         //TODO: Respect robots.txt - not relevant to http://www.tyre-shopper.co.uk
+        //TODO: Retry Logic
 
         public class SimpleWebCrawlerArgs
         {

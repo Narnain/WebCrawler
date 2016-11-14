@@ -31,11 +31,11 @@ namespace SimpleWebCrawler
             if (url.AbsoluteUri.EndsWith("/", StringComparison.Ordinal))
                 url = new Uri(url.AbsoluteUri.Remove(url.AbsoluteUri.Length - 1, 1));
             //Should take into account robots file
-            if(Crawled.Any(page => page.ToLower() == url.AbsoluteUri.ToLower()) || ToBeCrawled.Any(page => page.ToLower() == url.AbsoluteUri.ToLower()))
+            if(Crawled.Any(page => String.Equals(page, url.AbsoluteUri, StringComparison.OrdinalIgnoreCase)) || ToBeCrawled.Any(page => String.Equals(page, url.AbsoluteUri, StringComparison.OrdinalIgnoreCase)))
             {
                 return QueueStatus.Duplicate;
             }
-            ToBeCrawled.Enqueue(url.AbsoluteUri);
+            ToBeCrawled.Enqueue(url.AbsoluteUri.ToLower());
             return QueueStatus.Success;
         }
 
