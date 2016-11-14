@@ -21,7 +21,7 @@ namespace SimpleWebCrawler
         {
             DequeueThreshold = threshold;
         }
-        public int DequeueThreshold { get; set; } = 3333;
+        public int DequeueThreshold { get; set; } = 333;
         DateTime LastDequeue { get; set; } = DateTime.UtcNow;
         Queue<string> ToBeCrawled { get; set; } = new Queue<string>();
         List<string> Crawled { get; set; } = new List<string>();
